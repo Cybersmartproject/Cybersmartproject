@@ -1,16 +1,25 @@
-/* Global Styles */
-body {
-    font-family: Arial, sans-serif;
+/* ============================= */
+/*          Global Styles        */
+/* ============================= */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #F5F5F5;  /* light background */
-    color: #1C1C1C;             /* dark text */
 }
 
-/* Header / Navigation */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #EEEEEE; /* light neutral background */
+    color: #222831; /* main text color */
+    line-height: 1.6;
+}
+
+/* ============================= */
+/*       Header / Navbar         */
+/* ============================= */
 header {
-    background-color: #1B2A6B;  /* deep navy */
-    color: #F5F5F5;
+    background-color: #27374D; /* dark navy */
+    color: #EEEEEE;
     padding: 15px 20px;
 }
 
@@ -18,27 +27,35 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* wrap nav links on small screens */
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 nav .nav-links {
     list-style: none;
     display: flex;
     gap: 20px;
-    margin: 0;
-    padding: 0;
+    flex-wrap: wrap;
 }
 
 nav .nav-links li a {
-    color: #F5F5F5;
+    color: #EEEEEE;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 nav .nav-links li a:hover {
-    text-decoration: underline;
+    color: #00ADB5; /* highlight color on hover */
 }
 
-/* Hero Section */
+/* ============================= */
+/*       Hero / Intro Section    */
+/* ============================= */
 .hero {
     display: flex;
     flex-direction: column;
@@ -46,16 +63,18 @@ nav .nav-links li a:hover {
     justify-content: center;
     text-align: center;
     padding: 60px 20px;
-    background-color: #1B2A6B;  /* deep navy */
-    color: #F5F5F5;             /* light text */
-    width: 100%;
-    box-sizing: border-box;
+    background-color: #222831; /* dark background for hero */
+    color: #DDE6ED; /* light text */
 }
 
-.hero h2, .hero p {
-    width: 100%;
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
     max-width: 700px;
-    margin: 0 auto 15px auto;
+    margin-bottom: 25px;
 }
 
 .hero-buttons {
@@ -63,26 +82,27 @@ nav .nav-links li a:hover {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    width: 100%;
 }
 
 .hero-buttons .btn {
     display: inline-block;
     padding: 12px 25px;
-    background-color: #01796F;  /* vibrant teal */
-    color: #F5F5F5;             /* text on buttons */
+    background-color: #00ADB5; /* accent color */
+    color: #EEEEEE;
     text-decoration: none;
     font-weight: bold;
     border-radius: 8px;
-    transition: 0.3s;
+    transition: background 0.3s;
     text-align: center;
 }
 
 .hero-buttons .btn:hover {
-    background-color: #00B894;  /* bright green on hover */
+    background-color: #526D82; /* darker accent on hover */
 }
 
-/* Tips Section */
+/* ============================= */
+/*          Tips Section         */
+/* ============================= */
 .tips {
     padding: 40px 20px;
     text-align: center;
@@ -91,7 +111,7 @@ nav .nav-links li a:hover {
 .tips h3 {
     font-size: 2rem;
     margin-bottom: 30px;
-    color: #1C1C1C;  /* dark text */
+    color: #27374D; /* dark navy heading */
 }
 
 .tip-cards {
@@ -102,56 +122,39 @@ nav .nav-links li a:hover {
 }
 
 .tip {
-    background-color: #00B894;  /* bright green */
+    background-color: #00ADB5; /* bright accent for cards */
     padding: 20px;
     border-radius: 10px;
-    width: 200px;
+    width: 220px;
     box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
-    color: #F5F5F5;             /* text pops on green */
+    color: #EEEEEE;
 }
 
 .tip h4 {
     margin-bottom: 10px;
 }
 
-/* learn section start */
+/* ============================= */
+/*          Learn Section        */
+/* ============================= */
 .learn-page {
-    background-color: #222831;
-    color: #1C1C1C;
+    background-color: #DDE6ED;
+    color: #222831;
 }
 
-.learn-page .intro-section,
-.learn-page #password-section,
-.learn-page #phishing-section,
-.learn-page #privacy-section,
-.learn-page #social-media-section,
-.learn-page #device-security-section {
+.learn-page section {
     max-width: 900px;
     margin: 40px auto;
     padding: 40px 20px;
     border-radius: 15px;
-}
-
-.learn-page .intro-section {
-    background-color: #EEEEEE;
-}
-
-.learn-page #password-section {
-    background-color: #EEEEEE;
-}
-
-.learn-page #phishing-section,
-.learn-page #privacy-section,
-.learn-page #social-media-section,
-.learn-page #device-security-section {
     background-color: #EEEEEE;
 }
 
 .learn-page section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #1B2A6B;
-    border-bottom: 3px solid #01796F;
+    color: #27374D;
+    border-bottom: 3px solid #00ADB5;
     display: inline-block;
     padding-bottom: 5px;
 }
@@ -160,7 +163,7 @@ nav .nav-links li a:hover {
 .learn-page section ul {
     font-size: 1rem;
     margin-bottom: 20px;
-    color: #1C1C1C;
+    color: #222831;
 }
 
 .learn-page section ul {
@@ -177,11 +180,11 @@ nav .nav-links li a:hover {
     align-items: flex-start;
     gap: 20px;
     padding: 30px;
-    background-color: #393E46;
+    background-color: #393E46; /* darker input background */
     border-radius: 20px;
     max-width: 600px;
     margin: 20px 0;
-    color: #F5F5F5;
+    color: #DDE6ED;
 }
 
 .learn-page #password-checker input[type="text"] {
@@ -190,81 +193,29 @@ nav .nav-links li a:hover {
     font-size: 1.1rem;
     border-radius: 15px;
     border: none;
-    box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
-    .learn-page section {
-        padding: 40px 15px;
-    }
-
-    .learn-page #password-checker {
-        padding: 20px;
-        max-width: 100%;
-        gap: 15px;
-    }
-
-    .learn-page #password-checker input[type="text"] {
-        width: 100%;
-        font-size: 1rem;
-        padding: 12px;
-        margin-bottom: 10px;
-    }
-}
-/*Quiz Section*/
-body.quiz-page {
-    font-family: 'Verdana', sans-serif;
-    background: linear-gradient(135deg, #01796F, #3A9F88);
-    color: #fff;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #2E5091;
-    padding: 15px 20px;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
-
-nav .nav-links li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav .nav-links li a:hover {
-    text-decoration: underline;
-}
-
-.intro-section {
-    text-align: center;
-    padding: 30px 15px;
+/* ============================= */
+/*       Quiz Section            */
+/* ============================= */
+.quiz-page {
+    background-color: #222831;
+    color: #DDE6ED;
 }
 
 #quiz-section {
     max-width: 900px;
     margin: 20px auto;
-    background-color: #A5B9C6;
+    background-color: #EEEEEE;
     padding: 30px;
     border-radius: 20px;
-    color: #1B2A6B;
+    color: #222831;
 }
 
 .quiz-question {
     margin-bottom: 25px;
     padding: 15px;
-    background-color: #91A3B1;
+    background-color: #DDE6ED;
     border-radius: 15px;
 }
 
@@ -281,13 +232,12 @@ nav .nav-links li a:hover {
 .quiz-question li {
     margin-bottom: 12px;
     display: flex;
-    align-items: center; /* vertically center input and text */
-    gap: 10px;           /* space between input and text */
+    align-items: center;
+    gap: 10px;
 }
 
 .quiz-question input[type="radio"],
 .quiz-question input[type="checkbox"] {
-    flex-shrink: 0;      /* prevent shrinking of input */
     width: 18px;
     height: 18px;
 }
@@ -303,18 +253,19 @@ nav .nav-links li a:hover {
 }
 
 .quiz-controls .btn {
-    background-color: #01796F;
-    color: #fff;
+    background-color: #00ADB5;
+    color: #EEEEEE;
     border: none;
     padding: 12px 25px;
     margin: 5px;
     border-radius: 12px;
     cursor: pointer;
     font-weight: bold;
+    transition: background 0.3s;
 }
 
 .quiz-controls .btn:hover {
-    background-color: #00B894;
+    background-color: #526D82;
 }
 
 #quiz-score {
@@ -324,100 +275,96 @@ nav .nav-links li a:hover {
     margin: 20px;
 }
 
-/*spot the scam*/
-/* === Spot the Scam Page === */
-/* === Spot the Scam (Decision Style) === */
+/* ============================= */
+/*       Spot the Scam Page      */
+/* ============================= */
 .scam-page {
-  background-color: #1B2A6B;
-  color: #F5F5F5;
-  font-family: 'Verdana', sans-serif;
+    background-color: #27374D;
+    color: #EEEEEE;
+    font-family: 'Verdana', sans-serif;
 }
 
 .scam-page header {
-  background-color: #2E5091;
-  padding: 15px 20px;
+    background-color: #222831;
+    padding: 15px 20px;
 }
 
 .scam-page .intro-section {
-  text-align: center;
-  padding: 30px 15px;
-  background-color: #3A9F88;
-  color: #fff;
+    text-align: center;
+    padding: 30px 15px;
+    background-color: #00ADB5;
+    color: #DDE6ED;
+    border-radius: 10px;
 }
 
 .scam-page #email-game {
-  max-width: 800px;
-  margin: 40px auto;
-  background-color: #F5F5F5;
-  color: #1C1C1C;
-  border-radius: 15px;
-  padding: 30px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #EEEEEE;
+    color: #222831;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 }
 
 .scam-page .fake-email {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #fff;
-  padding: 20px;
-  line-height: 1.6;
+    border: 1px solid #526D82;
+    border-radius: 10px;
+    background-color: #DDE6ED;
+    padding: 20px;
+    line-height: 1.6;
 }
 
 .scam-page .email-header {
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
+    border-bottom: 1px solid #526D82;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .scam-page .choice-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 25px 0;
 }
 
 .scam-page .btn {
-  background-color: #01796F;
-  color: #fff;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 1rem;
+    background-color: #00ADB5;
+    color: #EEEEEE;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background 0.3s;
 }
 
 .scam-page .btn:hover {
-  background-color: #00B894;
+    background-color: #526D82;
 }
 
 .scam-page .game-feedback {
-  text-align: center;
-  margin-top: 10px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
 }
 
 .scam-page #score-display {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
 .scam-page #explanation {
-  margin-top: 15px;
-  font-style: italic;
-  font-weight: bold;
-  color: #1B2A6B;
-}
-.game-feedback {
-    text-align: center;
-    margin-top: 20px;
+    margin-top: 15px;
+    font-style: italic;
 }
 
 .restart-btn {
-    display: inline-block;
-    margin: 15px auto;
-    background-color: #01796F;
-    color: #fff;
+    display: block;
+    margin: 20px auto;
+    background-color: #00ADB5;
+    color: #EEEEEE;
     border: none;
     padding: 12px 25px;
     border-radius: 12px;
@@ -427,5 +374,29 @@ nav .nav-links li a:hover {
 }
 
 .restart-btn:hover {
-    background-color: #00B894;
+    background-color: #526D82;
+}
+
+/* ============================= */
+/*           Responsive          */
+/* ============================= */
+@media (max-width: 768px) {
+    nav .nav-links {
+        gap: 10px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .tips, .learn-page section, #quiz-section, #email-game {
+        padding: 20px;
+    }
+
+    .tip-cards {
+        flex-direction: column;
+        align-items: center;
+    }
 }
